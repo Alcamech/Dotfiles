@@ -1,0 +1,17 @@
+#!/bin/bash
+
+GREEN=`tput setaf 2`
+RESET=`tput sgr 0`
+
+echo "${GREEN}Running update...${RESET}"
+sudo dnf update
+echo "${GREEN}Running upgrade...${RESET}"
+sudo dnf upgrade -y
+echo "${GREEN}Running autoremove...${RESET}"
+sudo dnf autoremove -y
+echo "${GREEN}Running clean...${RESET}"
+sudo dnf clean all
+echo "${GREEN}Running flatpak updates...${RESET}"
+sudo flatpak update -y 
+echo "${GREEN}Weather in Charleston, SC${RESET}"
+weather charleston
